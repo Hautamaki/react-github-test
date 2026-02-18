@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar";
 
 import Home from "./pages/home";
-import Services from "./pages/services";
+import ColorPalette from "./pages/color-palette";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 
@@ -21,7 +21,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/color-palette" element={<ColorPalette />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
