@@ -8,8 +8,10 @@ import Navbar from "./components/navbar";
 
 import Home from "./pages/home";
 import ColorPalette from "./pages/color-palette";
+import FileConverter from "./pages/file-converter";
 import About from "./pages/about";
 import Contact from "./pages/contact";
+
 
 import './App.css'
 
@@ -22,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/color-palette" element={<ColorPalette />} />
+        <Route path="/file-converter" element={<FileConverter />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

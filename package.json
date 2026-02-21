@@ -16,6 +16,7 @@
     "@mui/material": "^7.3.8",
     "@tailwindcss/vite": "^4.1.18",
     "@untitledui/icons": "^0.0.21",
+    "jszip": "^3.10.1",
     "react": "^19.2.0",
     "react-aria-components": "^1.15.1",
     "react-dom": "^19.2.0",

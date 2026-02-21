@@ -8,10 +8,20 @@ function randomColor() {
 
 export default function Palette() {
     const [colors, setColors] = useState([]);
+    const [copied, setCopied] = useState(null);
 
     function generatePalette() {
         const newColors = Array.from({ length: 5 }, randomColor);
         setColors(newColors);
+    }
+
+    function copyColor(color) {
+        navigator.clipboard.writeText(color);
+        setCopied(color);
+
+        setTimeout(() => {
+            setCopied(null);
+        }, 1000);
     }
 
     useEffect(() => {
@@ -19,8 +29,8 @@ export default function Palette() {
     }, []);
 
     return (
-        <div>
-            <button onClick={generatePalette}>Generate Palette</button>
+        <div className="palette-container">
+            <button className="generate-btn" onClick={generatePalette}>Generate Palette</button>
 
             <div className="palette">
                 {colors.map(color => (
@@ -28,8 +38,9 @@ export default function Palette() {
                     key={color}
                     className="card"
                     style={{background: color}}
+                    onClick={() => copyColor(color)}
                     >
-                        {color}
+                    <span>{copied === color ? "Copied!" : color}</span>
                 </div>
                 ))}
             </div>
